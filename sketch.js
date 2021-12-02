@@ -107,7 +107,7 @@ function setup()
 
 function draw()
 {
-if(isStarted)
+if(isStarted && levelMusic.buffer)
 {
 	// Play background music
 
