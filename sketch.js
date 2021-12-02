@@ -107,11 +107,11 @@ function setup()
 
 function draw()
 {
-if(isStarted && levelMusic.buffer)
+if(isStarted)
 {
 	// Play background music
 
-	if(!levelMusic.isPlaying())
+	if(!levelMusic.isPlaying() && levelMusic.buffer)
 	{
 		levelMusic.play();
 	}
@@ -298,7 +298,7 @@ if(isStarted && levelMusic.buffer)
 
 	if((isLeft || isRight) && (gameChar_y == floorPos_y || contactingPlatform))
 	{
-		if(!walkSound.isPlaying())
+		if(!walkSound.isPlaying() && walkSound.buffer)
 		{
 			walkSound.play();
 		}
@@ -313,7 +313,10 @@ if(isStarted && levelMusic.buffer)
 	if(isJumping == true && (gameChar_y == floorPos_y || contactingPlatform))
 	{
 		gameChar_y -= 100;		
-		jumpSound.play();
+		if(jumpSound.buffer)
+		{
+			jumpSound.play();
+		}
 	}
 
 	if(gameChar_y < floorPos_y && !contactingPlatform)
@@ -766,7 +769,10 @@ function checkCollectable(t_collectable)
 	{
 		t_collectable.isFound = true;
 		game_score ++;
-		collectableSound.play();
+		if(collectableSound.buffer)
+		{
+			collectableSound.play();
+		}
 	}
 }
 
@@ -803,7 +809,10 @@ function checkFlagpole()
 	if(dist(gameChar_world_x, gameChar_y, flagpole.x_pos, flagpole.y_pos) < 20)
 	{
 		flagpole.isReached = true;
-		winSound.play();
+		if(winSound.buffer)
+		{
+			winSound.play();
+		}
 	}
 }
 
@@ -881,13 +890,19 @@ function Enemy(x, y, range)
 			lives --;
 			if(lives > 0)
 			{
-				hurtSound.play();
+				if(hurtSound.buffer)
+				{
+					hurtSound.play();
+				}
 				startGame();
 			}
 			else
 			{
 				gameChar_y = gameChar_y + 9999;
-				loseSound.play();
+				if(loseSound.buffer)
+				{
+					loseSound.play();
+				}
 			}
 		}
 	};
@@ -942,13 +957,19 @@ function checkHitBottom()
 		lives --;
 		if(lives > 0)
 		{
-			plummetSound.play();
+			if(plummetSound.buffer)
+			{
+				plummetSound.play();
+			}
 			startGame();
 		}
 		else
 		{
 			gameChar_y = gameChar_y + 999;
-			loseSound.play();
+			if(loseSound.buffer)
+			{
+				loseSound.play();
+			}
 		}
 	}
 }
