@@ -1,3 +1,5 @@
+//link to the game: https://relaxed-agnesi-dc6572.netlify.app/
+
 var isStarted;
 var gameChar_x;
 var gameChar_y;
