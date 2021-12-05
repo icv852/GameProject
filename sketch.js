@@ -1,35 +1,3 @@
-/*
-In this game project some extensions added are shown below:
-
-1. Add sound
-I used p5.sound to add sound effects and background musics. However, when I tested the game with live server, it failed to load the audio documents and crashed. I found that
-the problem was that the internet browser prohibits audio playing without triggered by user gesture. Therefore I added a starting menu and user needs to press a button to 
-enter the game. Then the problem mentioned above was solved.
-
-2. Create platforms
-The platforms are shown as pink rectangles.
-
-3. Create enemies
-The enemies are shown like hedgehogs with grey blades on their bodies.
-
-4. Multi levels
-There are 3 levels in the game. When you complete a level and enter the next one, you will keep your score. When you lose a life (not game over), you will try again in the 
-current level with your score earned from the last level. The full score you may get after all 3 levels is 100.
-
-5. Snowing effect (only in level 3)
-I used constructor function to draw some snow in the background of level 3. I used an array to store the snow objects. When a snow object reaches the ground, it would be 
-deleted from the array and a new one would be created and appears at the ceiling.
-
-6. Two difficulty choices
-You may choose to play the game in normal mode(4 lives) or in cheat mode(99 lives).
-
-
-About game play and level design:
-
-This game does not require players to be super skillful. There are not many enemies and it should be easy enough to jump across them. However, it requires players to explore 
-the map to find a clever way to reach the final goal (in level 2 and 3). A recorded gameplay video (gameplay.mp4) can be found in the folder.
-*/
-
 var isStarted;
 var gameChar_x;
 var gameChar_y;
